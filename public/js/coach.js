@@ -1,15 +1,11 @@
 
-function writeCoach(coachData)
+function writeCoach(userId, coachData)
 {
-	console.log(coachData);
-	var userId = "23456";
 	var reference = firebase.database().ref('coaches').child(userId);
 	reference.update(coachData);
-
-	
 }
 
-function ReadCoachInfo(userId, callback)
+function readCoach(userId, callback)
 {
 	var reference = firebase.database().ref('coaches').child(userId);
 	reference.once('value')
@@ -23,11 +19,3 @@ function ReadCoachInfo(userId, callback)
         }
     );
 }
-
-
-coachData = {"name": "Bob", "email": "bob@bob.com", "cellNumber": "1234567890", "schoolName": "FallField Elementary", "address": "1234 school lane"};
-
-//makeCoach(coachData);
-getCoachInfo("23456",function(data) {
-	console.log("coach info", data);
-});
