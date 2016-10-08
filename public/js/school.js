@@ -1,43 +1,28 @@
-function blah() {
-    console.log("Hello world");
 
-//var userId = firebase.auth().currentUser.uid;
-
-    console.log("user id",firebase.auth().currentUser);
+function  writeSchoolMentor(person){
+    console.log(person);
+    for (var index in person.school) {
+	var school_name = person.school[index]; 
+	var school_mentor = person.name;
+	var position = "Mentors";
+	var reference = firebase.database().ref('schools').child(school_name).child(position).child(school_mentor);
+	reference.update(person);
+    }
 }
 
-function  writeSchool(person){
+function writeSchoolCoach(person){
     console.log(person);
     var school_name = person.school;
-    var school_mentors = 
-    var reference = firebase.database().ref('schools').child(school_name);
-    reference.update(school_data);
+    var school_coach = person.name;
+    var position = "Coaches";
+    var reference =  firebase.database().ref('schools').child(school_name).child(position).child(school_coach);
+    reference.update(person);
+    
 }
 
-
-
-school_data = {"name":"UT"};
-
-makeSchool(school_data);
-
-var school_name = school_data.name;
-
-var reference = firebase.database().ref('schools').child(school_name);
-reference.once('value').then(
-    function(snapshot){
-	console.log("school", snapshot.val());
-    }
-).catch(
-    function(error){
-	console.log("error retrieving data", error);
-    }
-);
+function readSchoolMentors(school_name,callback){
     
-
-// from whiteboard
-
-function getSchoolName(userId,callback){
-    var reference = firebase.database().ref('schools').child(userId);
+    var reference = firebase.database().ref('schools').child(school_name).child("Mentors");
     
     reference.once('value').then (
 	function(snapshot) {
@@ -48,7 +33,19 @@ function getSchoolName(userId,callback){
 	    console.log("error retrieving data!",error);
 	}
     );
+
 }
+
+
+
+
+
+//school_data = {"name":"UT"};
+
+//makeSchool(school_data);
+
+// var school_name = school_data.name;
+
 
 
 
