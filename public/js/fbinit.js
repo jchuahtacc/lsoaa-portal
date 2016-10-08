@@ -1,10 +1,9 @@
-var config = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    databaseURL: "YOUR_DATABASE_URL",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGE_SENDER_ID"
-};
-
-firebase.initializeApp(config);
-
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAPzY1V4xLbdGogR5R-ns1K9Ex2tmuOydg",
+    authDomain: "hackathon-project-c40ea.firebaseapp.com",
+    databaseURL: "https://hackathon-project-c40ea.firebaseio.com",
+    storageBucket: "hackathon-project-c40ea.appspot.com",
+    messagingSenderId: "899231033182"
+  };
+  firebase.initializeApp(config);

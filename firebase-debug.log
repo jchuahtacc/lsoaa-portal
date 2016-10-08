@@ -1,14 +1,26 @@
 [debug] ----------------------------------------------------------------------
+<<<<<<< HEAD
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] CLI Version:  3.0.8
+[debug] Platform:     darwin
+[debug] Node Version: v4.6.0
+[debug] Time:         Sat Oct 08 2016 11:05:32 GMT-0500 (CDT)
+=======
 [debug] Command:      /usr/local/Cellar/node/6.6.0/bin/node /usr/local/bin/firebase serve
 [debug] CLI Version:  3.0.7
 [debug] Platform:     darwin
 [debug] Node Version: v6.6.0
 [debug] Time:         Sat Oct 08 2016 10:04:00 GMT-0500 (CDT)
+>>>>>>> jchuahtacc/master
 [debug] ----------------------------------------------------------------------
 [debug] 
 [info] Starting Firebase development server...
 [info] 
+<<<<<<< HEAD
+[info] Project Directory: /Users/marinaescalante/Documents/lsoaa-portal
+=======
 [info] Project Directory: /Users/jchuah/GitHub/lsoaa-portal
+>>>>>>> jchuahtacc/master
 [info] Public Directory: public
 [info] 
 [info] Server listening at: http://localhost:5000
