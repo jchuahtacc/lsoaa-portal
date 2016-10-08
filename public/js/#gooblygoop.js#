@@ -1,0 +1,11 @@
+mentor = {"school":["UT","AM"],"name":"Rusty"};
+mentor2 = {"school":["UT","UWO"],"name":"Cassie"};
+coach = {"school":"UT","name":"Justin"};
+coach2 = {"school":"UT","name":"Marina"};
+writeSchoolMentor(mentor);
+writeSchoolMentor(mentor2);
+writeSchoolCoach(coach);
+writeSchoolCoach(coach2);
+readSchoolMentors("UT",function(data){
+    console.log("aslkfnadlkn",data);
+});
