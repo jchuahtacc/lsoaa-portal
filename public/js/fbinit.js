@@ -1,9 +1,9 @@
 var config = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    databaseURL: "YOUR_DATABASE_URL",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGE_SENDER_ID"
+    apiKey: "AIzaSyBrajfy1TzLTwvPTRbiub9OVRo39lR2w90",
+    authDomain: "lsoaa-57868.firebaseapp.com",
+    databaseURL: "https://lsoaa-57868.firebaseio.com",
+    storageBucket: "lsoaa-57868.appspot.com",
+    messagingSenderId: "632533783801"
 };
 
 firebase.initializeApp(config);
