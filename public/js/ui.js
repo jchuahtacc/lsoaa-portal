@@ -1,3 +1,5 @@
+var wizard = null;
+
 function login(create) {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(
@@ -28,7 +30,7 @@ function createAccount() {
     displayFrontMatter(false);
     var user = firebase.auth().currentUser;
     $("#createAccount .profile").profile(user.displayName, user.email, user.photoURL);
-    $("#createAccount").removeClass("hidden");
+    wizard.start("#createAccount");
 }
 
 function contactInfo(coach) {
@@ -63,6 +65,7 @@ function writeUserData() {
 }
 
 function init() {
+    wizard = Wizard("body");
 }
 
 $(document).ready(init);
