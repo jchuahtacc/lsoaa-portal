@@ -6,70 +6,117 @@
         <script type="text/javascript" src="./js/bootstrap.min.js"></script>
         <script type="text/javascript" src="./js/jquery.bootstrap.wizard.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+        <script src="./js/profile.js"></script>
         <script src="./js/fbinit.js"></script>
         <script src="./js/ui.js"></script>
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-	<div class="navbar navbar-default navbar-static-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">
-					<span>Longhorn Science Olympiad Alumni Organization</span>
-				</a>
-			</div>
-			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
-				<ul class="nav navbar-nav navbar-right">
-                    <li><p class="navbar-btn"><a href="#" class="btn btn-primary" onclick="login()">Login</a></p></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="jumbotron">
-						<h1>Catchy Message!</h1>
-						<p>Some subtext</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive">
-					<h2>Mentors</h2>
-					<p>
-					Lorem ipsum dolor sit amet, consectetur adipisici elit, <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud
-					</p>
-				</div>
-				<div class="col-md-4">
-					<img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive"> 
-					<h2>Team Coaches</h2>
-					<p>
-					Lorem ipsum dolor sit amet, consectetur adipisici elit, <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud
-					</p>
-				</div>
-				<div class="col-md-4">
-					<img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive"> 
-					<h2>Administrators</h2>
-					<p>
-					Lorem ipsum dolor sit amet, consectetur adipisici elit, <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+    	<div class="navbar navbar-inverse navbar-static-top">
+    		<div class="container">
+    			<div class="navbar-header">
+    				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+    					<span class="sr-only">Toggle navigation</span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    				</button>
+    				<a class="navbar-brand" href="#">
+    					<span>Longhorn Science Olympiad Alumni Organization</span>
+    				</a>
+    			</div>
+    		</div>
+        </div>
+        <div class="jumbotron" id="jumbotron">
+            <div class="container">
+                <div class="pull-right text-right">
+                    <h1>The Mentorship Portal</h1>
+                    <p>Connecting Austin area Science Olympiad teams to mentors</p>
+                    <p><a href="#" class="btn btn-primary" onclick="login(true)">Create an account</a> / <a href="#" class="btn btn-primary" onclick="login(false)">Login</a></p>
+                </div>
+            </div>
+        </div>
+    	<div class="section" id="introContainer">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-4">
+    					<h2>Mentors</h2>
+    					<p>
+    					Lorem ipsum dolor sit amet, consectetur adipisici elit, <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud
+    					</p>
+    				</div>
+    				<div class="col-md-4">
+    					<h2>Team Coaches</h2>
+    					<p>
+    					Lorem ipsum dolor sit amet, consectetur adipisici elit, <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud
+    					</p>
+    				</div>
+    				<div class="col-md-4">
+    					<h2>Administrators</h2>
+    					<p>
+    					Lorem ipsum dolor sit amet, consectetur adipisici elit, <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud
+    					</p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+        <div id="createAccount" class="hidden">
+            <div class="container">
+                <div class="container row">
+                    <div class="col-md-6">
+                        <h1>Are you a mentor or a coach?</h1>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-4 profile"></div>
+                </div>
+                <div class="row"></div>
+                    <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h3>I am a mentor.</h3></div>
+                            <div class="panel-body">
+                                I am a University of Texas at Austin student, participating in the Longhorn Science Olympiad Alumni Association.
+                            </div>
+                            <div class="panel-footer">
+                                <div class="btn btn-primary" onClick="contactInfo(false)">Continue as a mentor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-success">
+                            <div class="panel-heading"><h3>I am a coach.</h3></div>
+                            <div class="panel-body">
+                                I am a sponsor or coach of an Austin-area Science Olympiad team, and I wish to request an undergraduate mentor from the University of Texas at Austin.
+                            </div>
+                            <div class="panel-footer">
+                                <div class="btn btn-success" onClick="contactInfo(true)">Continue as a coach</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contactInfo" class="hidden">
+            <div class="container">
+                <div class="row">
+                    <h2>Please give us your phone contact info</h2>
+                    <p>
+                    <label for="coachPhone">What is your phone number?</label><br />
+                    <input id="coachPhone" type="text" placeholder="(xxx) xxx-xxxx" />
+                    </p>
+                    <p>
+                    Is it okay to contact this number via text message?
+                    </p>
+
+                </div>
+            </div> 
+        </div>
+        <div id="createMentor" class="hidden">
+        </div>
+        <div id="createCoach" class="hidden">
+       </div>
 	</body>
 </html>

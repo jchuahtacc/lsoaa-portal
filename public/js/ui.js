@@ -1,14 +1,39 @@
-function login() {
+function login(create) {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(
         function(result) {
             console.log("login success!", result);
+            if (create) {
+                createAccount();
+            }
         }
     ).catch(
         function(error) {
             console.log("login failed", error);
         }
     );
+}
+
+function displayFrontMatter(show) {
+    if (show) {
+        $("#introContainer").removeClass("hidden");
+        $("#jumbotron").removeClass("hidden");
+    } else {
+        $("#introContainer").addClass("hidden");
+        $("#jumbotron").addClass("hidden");
+    }
+}
+
+function createAccount() {
+    displayFrontMatter(false);
+    var user = firebase.auth().currentUser;
+    $("#createAccount .profile").profile(user.displayName, user.email, user.photoURL);
+    $("#createAccount").removeClass("hidden");
+}
+
+function contactInfo(coach) {
+    $("#createAccount").addClass("hidden");
+    $("#contactInfo").removeClass("hidden");
 }
 
 function getCurrentUser() {
@@ -38,7 +63,6 @@ function writeUserData() {
 }
 
 function init() {
-    
 }
 
 $(document).ready(init);
