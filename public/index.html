@@ -62,7 +62,7 @@
     			</div>
     		</div>
     	</div>
-        <div id="createAccount" class="wizard">
+        <div id="createAccount" class="wizard wizard-start">
             <div class="container">
                 <div class="container row">
                     <div class="col-md-6">
@@ -82,7 +82,7 @@
                                 I am a University of Texas at Austin student, participating in the Longhorn Science Olympiad Alumni Association.
                             </div>
                             <div class="panel-footer">
-                                <div class="btn btn-primary wizard-next" wizard-queue="#contactInfo #createMentor" >Continue as a mentor</div>
+                                <div class="btn btn-primary wizard-next" wizard-tree="contactInfo createMentor" >Continue as a mentor</div>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                                 I am a sponsor or coach of an Austin-area Science Olympiad team, and I wish to request an undergraduate mentor from the University of Texas at Austin.
                             </div>
                             <div class="panel-footer">
-                                <div class="btn btn-success wizard-next" wizard-queue="#contactInfo #createCoach">Continue as a coach</div>
+                                <div class="btn btn-success wizard-next" wizard-tree="contactInfo createCoach">Continue as a coach</div>
                             </div>
                         </div>
                     </div>
@@ -116,6 +116,8 @@
             </div> 
         </div>
         <div id="createMentor" class="wizard">
+            <h2>Create Mentor</h2>
+            <div class="btn btn-default wizard-previous">Previous</div> <div class="btn btn-success wizard-next">Continue</div>
         </div>
         <div id="createCoach" class="wizard">
        </div>

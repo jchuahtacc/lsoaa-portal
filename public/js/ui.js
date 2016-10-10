@@ -30,7 +30,7 @@ function createAccount() {
     displayFrontMatter(false);
     var user = firebase.auth().currentUser;
     $("#createAccount .profile").profile(user.displayName, user.email, user.photoURL);
-    wizard.start("#createAccount");
+    $("#createAccount").fadeIn(400);
 }
 
 function contactInfo(coach) {
@@ -65,7 +65,7 @@ function writeUserData() {
 }
 
 function init() {
-    wizard = Wizard("body");
+    $("body").wizard();
 }
 
 $(document).ready(init);
